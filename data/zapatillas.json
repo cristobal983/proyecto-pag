@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Air Force 1",
+    "precio": 110.00,
+    "descripcion": "El clásico que nunca pasa de moda."
+  },
+  {
+    "id": 2,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Air Max 90",
+    "precio": 130.00,
+    "descripcion": "Comodidad y estilo legendario."
+  },
+  {
+    "id": 3,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Dunk Low",
+    "precio": 100.00,
+    "descripcion": "Diseño retro para la cancha y la calle."
+  },
+  {
+    "id": 4,
+    "img": "../imagenes/blazer77.png",
+    "titulo": "Nike Blazer Mid '77",
+    "precio": 105.00,
+    "descripcion": "Look vintage con detalles modernos."
+  },
+  {
+    "id": 5,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike React Infinity Run",
+    "precio": 160.00,
+    "descripcion": "Diseñadas para reducir lesiones."
+  },
+  {
+    "id": 6,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Pegasus 40",
+    "precio": 130.00,
+    "descripcion": "El caballo de batalla del running."
+  },
+  {
+    "id": 7,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Air Max 270",
+    "precio": 150.00,
+    "descripcion": "Cámara de aire grande para mayor confort."
+  },
+  {
+    "id": 8,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Air VaporMax",
+    "precio": 210.00,
+    "descripcion": "Amortiguación revolucionaria."
+  },
+  {
+    "id": 9,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Cortez",
+    "precio": 90.00,
+    "descripcion": "La primera obra maestra de Bill Bowerman."
+  },
+  {
+    "id": 10,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike SB Dunk Low",
+    "precio": 115.00,
+    "descripcion": "El ícono del skate."
+  },
+  {
+    "id": 11,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Air Max Plus",
+    "precio": 175.00,
+    "descripcion": "Estilo atrevido y tecnología Tuned Air."
+  },
+  {
+    "id": 12,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike ZoomX Vaporfly",
+    "precio": 250.00,
+    "descripcion": "Velocidad récord para carreras largas."
+  },
+  {
+    "id": 13,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Air Huarache",
+    "precio": 120.00,
+    "descripcion": "Ajuste tipo calcetín para mayor confort."
+  },
+  {
+    "id": 14,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike LeBron XX",
+    "precio": 200.00,
+    "descripcion": "Rendimiento premium para baloncesto."
+  },
+  {
+    "id": 15,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike KD 15",
+    "precio": 150.00,
+    "descripcion": "Agilidad y soporte excepcional."
+  },
+  {
+    "id": 16,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Kyrie 8",
+    "precio": 140.00,
+    "descripcion": "Tracción multidireccional."
+  },
+  {
+    "id": 17,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike PG 6",
+    "precio": 120.00,
+    "descripcion": "Comodidad reactiva en la cancha."
+  },
+  {
+    "id": 18,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Metcon 8",
+    "precio": 130.00,
+    "descripcion": "Estabilidad superior para crossfit."
+  },
+  {
+    "id": 19,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Free RN",
+    "precio": 100.00,
+    "descripcion": "Sensación de ir descalzo al correr."
+  },
+  {
+    "id": 20,
+    "img": "../imagenes/retro11.jpg",
+    "titulo": "Nike Invincible 3",
+    "precio": 180.00,
+    "descripcion": "Máxima amortiguación ZoomX."
+  }
+]
