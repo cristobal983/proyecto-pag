@@ -20,14 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <div class="navbar-end">  
                         <div class="buttons">
-                            <a href="${basePath}pages/regiter.html" class="button is-dark">
+                            <a href="${basePath}pages/registro.html" class="button is-dark">
                                 <strong>Registrarse</strong>
                             </a>
                             <a href="${basePath}pages/login.html" class="button is-light">
                                 Iniciar Sesión
-                            </a>
-                            <a href="${basePath}pages/profile.html" class="button is-primary is-light">
-                                Mi Perfil
                             </a>
                         </div>
                     </div>
