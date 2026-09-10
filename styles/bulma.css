@@ -1,0 +1,37 @@
+:root {
+  /* Identidad visual: Naranja "Sneakerhead" / Deportivo */
+  --bulma-primary-h: 18deg;
+  --bulma-primary-s: 100%;
+  --bulma-primary-l: 50%;
+
+  /* Colores secundarios y acentos */
+  --bulma-link-h: 210deg;
+  --bulma-link-s: 90%;
+  --bulma-link-l: 50%;
+
+  --bulma-info-h: 160deg;
+  --bulma-info-s: 84%;
+  --bulma-info-l: 39%; /* Verde para insignias de "En Stock" / Oferta */
+
+  /* Tipografía urbana y deportiva */
+  --bulma-family-primary: 'Montserrat', 'Inter', -apple-system, sans-serif;
+  --bulma-family-code: 'JetBrains Mono', monospace;
+  
+  /* Escala de texto y pesos */
+  --bulma-weight-medium: 600;
+  --bulma-weight-bold: 800; /* Letras gruesas para títulos de modelos */
+
+  /* Estética de tarjetas e insumos (Bordes redondeados) */
+  --bulma-radius-small: 0.375rem;
+  --bulma-radius: 0.75rem;
+  --bulma-radius-large: 1.25rem;
+  --bulma-radius-rounded: 9999px;
+
+  /* Controles y Botones de Compra */
+  --bulma-control-radius: var(--bulma-radius);
+  --bulma-control-height: 2.75em; /* Botones más altos para mejor toque en móviles */
+
+  /* Transiciones para efectos hover en las fotos de las zapatillas */
+  --bulma-duration: 200ms;
+  --bulma-easing: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
