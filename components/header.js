@@ -2,34 +2,109 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerContainer = document.getElementById('header-container');
     if (headerContainer) {
         const isRoot = !window.location.pathname.includes('/pages/');
+        const isTienda = window.location.pathname.endsWith('tienda.html');
         const basePath = isRoot ? '' : '../';
 
         headerContainer.innerHTML = `
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="${basePath}index.html">
-                        <strong class="is-size-4">SNEAKERS STORE</strong>
+            <header class="site-header">
+                <div class="header-container">
+                    <!-- Logo FY.NEW.YORK -->
+                    <a class="logo-container" href="${basePath}pages/tienda.html" id="nav-logo">
+                        <span class="brand-logo">
+                            <span class="logo-part-fy">FY.</span><span class="logo-part-ny">NEW.YORK</span>
+                        </span>
                     </a>
-                </div>
 
-                <div class="navbar-menu is-active">
-                    <div class="navbar-start">
-                        <a href="${basePath}index.html" class="navbar-item">Inicio</a>
-                        <a href="${basePath}pages/tienda.html" class="navbar-item">Catálogo</a>
-                    </div>
+                    <!-- Navigation Menu -->
+                    <nav>
+                        <ul class="nav-menu">
+                            <li><button class="nav-link" data-filter="marcas">MARCAS</button></li>
+                            <li><button class="nav-link" data-filter="hombre">HOMBRE</button></li>
+                            <li><button class="nav-link" data-filter="mujer">MUJER</button></li>
+                            <li><button class="nav-link" data-filter="kids">KIDS</button></li>
+                            <li><button class="nav-link" data-filter="accesorios">ACCESORIOS</button></li>
+                            <li><button class="nav-link nav-btn-winter" data-filter="winter">WINTER</button></li>
+                            <li><button class="nav-link nav-btn-sale" data-filter="sale">SALE 🔥</button></li>
+                        </ul>
+                    </nav>
 
-                    <div class="navbar-end">  
-                        <div class="buttons">
-                            <a href="${basePath}pages/registro.html" class="button is-dark">
-                                <strong>Registrarse</strong>
-                            </a>
-                            <a href="${basePath}pages/login.html" class="button is-light">
-                                Iniciar Sesión
-                            </a>
+                    <!-- Utility Actions: Search, Account, Cart -->
+                    <div class="header-actions">
+                        <div class="search-wrapper">
+                            <input type="text" id="header-search" class="search-input" placeholder="Buscar" autocomplete="off">
+                            <button class="search-icon-btn" id="search-btn" aria-label="Buscar">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
                         </div>
+
+                        <a href="${basePath}pages/login.html" class="action-icon-btn" title="Mi Cuenta" id="btn-user-account">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </a>
+
+                        <button class="action-icon-btn" id="header-cart-btn" title="Carrito de Compras" aria-label="Carrito de compras">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span id="header-cart-badge" class="cart-counter">0</span>
+                        </button>
                     </div>
                 </div>
-            </nav>
+            </header>
         `;
+
+        // Cross-page navigation for nav links when not on tienda.html
+        if (!isTienda) {
+            document.querySelectorAll('.nav-link[data-filter]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const filter = btn.getAttribute('data-filter');
+                    window.location.href = `${basePath}pages/tienda.html?filter=${filter}`;
+                });
+            });
+
+            const searchInput = document.getElementById('header-search');
+            if (searchInput) {
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && searchInput.value.trim() !== '') {
+                        window.location.href = `${basePath}pages/tienda.html?search=${encodeURIComponent(searchInput.value.trim())}`;
+                    }
+                });
+            }
+
+            const searchBtn = document.getElementById('search-btn');
+            if (searchBtn && searchInput) {
+                searchBtn.addEventListener('click', () => {
+                    if (searchInput.value.trim() !== '') {
+                        window.location.href = `${basePath}pages/tienda.html?search=${encodeURIComponent(searchInput.value.trim())}`;
+                    }
+                });
+            }
+        }
+
+        // Update cart badge from localStorage
+        const updateHeaderCartBadge = () => {
+            const badge = document.getElementById('header-cart-badge');
+            if (badge) {
+                try {
+                    const cart = JSON.parse(localStorage.getItem('fyny_cart') || '[]');
+                    const totalItems = cart.reduce((acc, item) => acc + (item.cantidad || 1), 0);
+                    badge.textContent = totalItems;
+                    badge.style.display = totalItems > 0 ? 'flex' : 'none';
+                } catch {
+                    badge.style.display = 'none';
+                }
+            }
+        };
+
+        updateHeaderCartBadge();
+        window.addEventListener('cartUpdated', updateHeaderCartBadge);
     }
 });

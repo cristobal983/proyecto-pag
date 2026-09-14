@@ -3,31 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Zapatillas - Sneakers Store</title>
-    <link rel="stylesheet" href="../styles/bulma.css">
+    <title>FY.NEW.YORK - Catálogo de Zapatillas y Streetwear</title>
     <link rel="stylesheet" href="../styles/estilos.css">
 </head>
 <body>
-    <header class="section pb-3">
-        <div id="header-container"></div>
+
+    <!-- Header dinámico (FY.NEW.YORK) -->
+    <div id="header-container"></div>
+
+    <!-- Contenido Principal -->
+    <main class="catalog-main">
         
-        <div class="mt-4">
-            <h1 class="title has-text-dark has-text-centered">CATÁLOGO DE ZAPATILLAS</h1>
-            <p class="subtitle is-6 has-text-centered has-text-grey">Descubre los mejores modelos de temporada</p>
+        <!-- Barra de Estado de Filtros / Resultados -->
+        <div class="filter-status-bar" id="filter-bar">
+            <div class="active-filter-title">
+                <span id="filter-title-text">Todos los productos</span>
+                <span class="active-filter-badge" id="product-count-badge">12 productos</span>
+            </div>
+            <button class="clear-filter-btn" id="clear-filters-btn" style="display: none;">Limpiar filtros</button>
         </div>
-    </header>
-    
-    <main class="section container">
-        <div class="columns is-centered is-multiline" id="productos-container">
-            <!-- Productos cargados dinámicamente -->
+
+        <!-- Cuadrícula de 6 columnas de Productos -->
+        <div class="product-grid" id="productos-grid">
+            <!-- Cargado dinámicamente con Vanilla JS -->
         </div>
+
     </main>
 
+    <!-- Drawer Lateral del Carrito -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-label="Carrito de compras">
+        <div class="cart-header">
+            <h2 class="cart-title">Tu Carrito</h2>
+            <button class="close-cart-btn" id="close-cart-btn" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-items-container">
+            <!-- Items de carrito inyectados dinámicamente -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal-row">
+                <span class="subtotal-label">Subtotal estimado</span>
+                <span class="subtotal-amount" id="cart-subtotal">$0</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Finalizar Compra</button>
+        </div>
+    </aside>
+
+    <!-- Modal de Selección de Talla / Vista Rápida -->
+    <div class="modal-overlay" id="product-modal-overlay">
+        <div class="modal-card" id="product-modal-content">
+            <!-- Contenido del modal inyectado al hacer clic -->
+        </div>
+    </div>
+
+    <!-- Contenedor de Notificaciones Toast -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Footer dinámico -->
     <div id="footer-container"></div>
 
+    <!-- Scripts -->
     <script src="../components/header.js"></script>
     <script src="../components/footer.js"></script>
-    <script src="../scripts/scripts.js"></script>
     <script src="../scripts/tienda.js"></script>
 </body>
 </html>

@@ -2,21 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const footerContainer = document.getElementById('footer-container');
     if (footerContainer) {
         footerContainer.innerHTML = `
-            <footer class="footer mt-6">
-                <div class="content has-text-centered">
-                    <p>
-                        <strong>Sneakers Store</strong> — &copy; 2026 Todos los derechos reservados.
-                    </p>
-
-                    <!-- Enlaces directos -->
-                    <div class="buttons is-centered mt-2">
-                        <a class="button is-small is-ghost" href="#">Términos y Condiciones</a>
-                        <a class="button is-small is-ghost" href="#">Política de Privacidad</a>
-                        <a class="button is-small is-ghost" href="#">Contacto / Soporte</a>
+            <footer class="site-footer">
+                <div class="footer-content">
+                    <div class="brand-logo" style="font-size: 20px;">
+                        <span class="logo-part-fy">FY.</span><span class="logo-part-ny">NEW.YORK</span>
                     </div>
-
-                    <p class="is-size-7 has-text-grey mt-2">
-                        Este es un sitio web de demostración para venta de calzado deportivo. Envíos a todo el país y devoluciones gratuitas.
+                    <div class="footer-links">
+                        <a href="#">Marcas</a>
+                        <a href="#">Tiendas</a>
+                        <a href="#">Términos y Condiciones</a>
+                        <a href="#">Políticas de Devolución</a>
+                        <a href="#">Preguntas Frecuentes</a>
+                        <a href="#">Contacto</a>
+                    </div>
+                    <p style="color: #999; font-size: 11px;">
+                        &copy; 2026 FY.NEW.YORK. Todos los derechos reservados. Precios válidos para compras en línea.
                     </p>
                 </div>
             </footer>

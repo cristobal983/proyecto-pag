@@ -4,94 +4,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SNEAKERS STORE - Zapatillas Urbanas y Deportivas</title>
-  <link rel="stylesheet" href="styles/bulma.css">
+  <title>FY.NEW.YORK - Zapatillas Urbanas y Calzado Exclusivo</title>
   <link rel="stylesheet" href="styles/estilos.css">
 </head>
 
 <body>
 
-  <header class="section pb-2">
+  <!-- Header dinámico (FY.NEW.YORK) -->
+  <div id="header-container"></div>
 
-    <div id="header-container"></div>
-
-    <div class="mt-4">
-      <h1 class="title has-text-dark has-text-centered is-size-1">
-        JUST DO IT
+  <!-- Hero Banner Principal -->
+  <section style="background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%); padding: 50px 20px 30px; text-align: center;">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <span style="font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--pink-accent);">Nueva Temporada 2026</span>
+      <h1 style="font-size: clamp(36px, 6vw, 64px); font-weight: 900; font-style: italic; letter-spacing: -2px; text-transform: uppercase; margin: 8px 0; color: #111;">
+        JUST DO IT.
       </h1>
-      <h2 class="subtitle has-text-centered has-text-grey">
-        LO ÚLTIMO EN ZAPATILLAS Y CALZADO DEPORTIVO
-      </h2>
-    </div>
-
-    <!-- Banner Principal -->
-    <div class="column has-text-centered is-10 is-offset-1">
-      <figure class="image is-inline-block">
-        <img src="images/imagen1.webp" alt="Zapatilla destacada" style="max-width: 600px;">
-      </figure>
-    </div>
-
-  </header>
-
-  <main class="container px-4">
-
-    <!-- Primer Bloque: Texto a la izquierda, Imagen a la derecha -->
-    <div class="columns is-vcentered my-5">
-      <div class="column is-6">
-        <div class="field">
-          <h3 class="title is-4">Rendimiento e Innovación</h3>
-          <p class="is-size-5">
-            <strong>Bienvenido a tu tienda de calzado favorita.</strong>
-            Aquí encontrarás los modelos más exclusivos de zapatillas urbanas y deportivas con la máxima
-            <strong class="has-text-danger">comodidad y estilo</strong>. Diseñadas para superar tus límites
-            en cada entrenamiento o en el día a día.
-          </p>
-        </div>
+      <p style="font-size: 16px; color: #666; max-width: 600px; margin: 0 auto 24px; font-weight: 500;">
+        Descubre los lanzamientos más esperados de Jordan, Salomon, Nike, Adidas y las mejores marcas urbanas.
+      </p>
+      <div>
+        <a href="pages/tienda.html" style="display: inline-block; background: #111; color: #fff; padding: 14px 36px; border-radius: 4px; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; transition: background 0.2s;" onmouseover="this.style.background='#e60064'" onmouseout="this.style.background='#111'">
+          Ver Catálogo Completo
+        </a>
       </div>
-
-      <div class="column is-6">
-        <figure class="image is-4by3">
-          <img src="../imagenes/retro11.jpg" alt="Modelo deportivo">
-        </figure>
+      <div style="margin-top: 36px;">
+        <img src="imagenes/salomon_xt6.jpg" alt="Salomon XT-6 GTX" style="max-width: 480px; width: 100%; border-radius: 8px; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.12));">
       </div>
     </div>
+  </section>
 
-    <!-- Segundo Bloque: Imagen a la izquierda, Texto a la derecha -->
-    <div class="columns is-vcentered my-5">
-      <div class="column is-6">
-        <figure class="image is-4by3">
-          <img src="../imagenes/retro11.jpg" alt="Colección urbana">
-        </figure>
-      </div>
+  <!-- Showcase Blocks -->
+  <main style="max-width: 1200px; margin: 40px auto; padding: 0 24px;">
 
-      <div class="column is-6">
-        <div class="field">
-          <h3 class="title is-4">Colección Urbana y Tendencias</h3>
-          <p class="is-size-5">
-            <strong>Explora nuestro catálogo completo de calzado.</strong>
-            Contamos con una amplia variedad de tallas, colores y diseños icónicos. Nuestro inventario se actualiza constantemente para ofrecerte las últimas novedades del mercado.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Llamado a la acción -->
-    <div class="columns is-centered my-6">
-      <div class="column is-6 has-text-centered">
-        <p class="mb-4 is-size-4">
-          <strong>¿Listo para renovar tu estilo?</strong>
+    <!-- Primer Bloque -->
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-bottom: 60px; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 280px;">
+        <span style="font-size: 12px; font-weight: 800; color: var(--pink-accent); text-transform: uppercase; letter-spacing: 1px;">Innovación y Estilo</span>
+        <h2 style="font-size: 28px; font-weight: 900; text-transform: uppercase; margin: 8px 0 14px; letter-spacing: -0.5px;">Rendimiento Insuperable</h2>
+        <p style="font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 20px;">
+          Aquí encontrarás los modelos más icónicos de zapatillas urbanas y deportivas con la máxima comodidad y elegancia. Diseñadas para superar tus límites en la calle o en la cancha.
         </p>
-
-        <div class="buttons is-centered">
-          <a href="pages/tienda.html" class="button is-dark is-large is-rounded">
-            <strong>Ver Catálogo Completo</strong>
-          </a>
-        </div>
+        <a href="pages/tienda.html?filter=hombre" style="font-size: 13px; font-weight: 800; text-transform: uppercase; color: #111; text-decoration: underline; text-underline-offset: 4px;">
+          Ver colección hombre &rarr;
+        </a>
       </div>
+      <div style="flex: 1; min-width: 280px; background: var(--bg-card); border-radius: 8px; padding: 20px; text-align: center;">
+        <img src="imagenes/jordan_spizike.jpg" alt="Jordan Spizike" style="max-width: 380px; width: 100%; object-fit: contain;">
+      </div>
+    </div>
+
+    <!-- Segundo Bloque -->
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-bottom: 60px; flex-wrap: wrap; flex-direction: row-reverse;">
+      <div style="flex: 1; min-width: 280px;">
+        <span style="font-size: 12px; font-weight: 800; color: var(--pink-accent); text-transform: uppercase; letter-spacing: 1px;">Tendencias Streetwear</span>
+        <h2 style="font-size: 28px; font-weight: 900; text-transform: uppercase; margin: 8px 0 14px; letter-spacing: -0.5px;">Colección Urbana Exclusiva</h2>
+        <p style="font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 20px;">
+          Explora nuestro catálogo con los clásicos de siempre: Adidas Superstar, Nike Air Force 1, Timberland Waterproof y las últimas siluetas retro Y2K.
+        </p>
+        <a href="pages/tienda.html?filter=sale" style="font-size: 13px; font-weight: 800; text-transform: uppercase; color: var(--pink-accent); text-decoration: underline; text-underline-offset: 4px;">
+          Ver ofertas activas 🔥 &rarr;
+        </a>
+      </div>
+      <div style="flex: 1; min-width: 280px; background: var(--bg-card); border-radius: 8px; padding: 20px; text-align: center;">
+        <img src="imagenes/timberland_boot.jpg" alt="Timberland Waterproof" style="max-width: 380px; width: 100%; object-fit: contain;">
+      </div>
+    </div>
+
+    <!-- Banner Newsletter / Call to Action -->
+    <div style="background: #111; color: #fff; padding: 48px 32px; border-radius: 8px; text-align: center; margin: 40px 0;">
+      <h3 style="font-size: 26px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px; margin-bottom: 10px;">
+        ¿Listo para renovar tus sneakers?
+      </h3>
+      <p style="font-size: 14px; color: #aaa; max-width: 500px; margin: 0 auto 24px;">
+        Envíos rápidos a todo el país. Garantía oficial y cambios sin costo en FY.NEW.YORK.
+      </p>
+      <a href="pages/tienda.html" style="display: inline-block; background: var(--pink-accent); color: #fff; padding: 14px 36px; border-radius: 4px; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px;">
+        Explorar la Tienda
+      </a>
     </div>
 
   </main>
 
+  <!-- Footer dinámico -->
   <div id="footer-container"></div>
 
   <script src="components/header.js"></script>
