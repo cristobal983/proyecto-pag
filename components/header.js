@@ -15,6 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         </span>
                     </a>
 
+                    <!-- Burger Menu Button (Mobile Only) -->
+                    <button class="burger-menu-btn" id="burger-btn" aria-label="Menú">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+
                     <!-- Navigation Menu -->
                     <nav>
                         <ul class="nav-menu">
@@ -39,6 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
                                 </svg>
                             </button>
                         </div>
+
+                        <a href="${basePath}pages/admin.html" class="action-icon-btn" title="Panel Administrador" id="btn-admin">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="9" x2="21" y2="9"></line>
+                                <line x1="9" y1="21" x2="9" y2="9"></line>
+                            </svg>
+                        </a>
 
                         <a href="${basePath}pages/login.html" class="action-icon-btn" title="Mi Cuenta" id="btn-user-account">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -106,5 +123,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updateHeaderCartBadge();
         window.addEventListener('cartUpdated', updateHeaderCartBadge);
+
+        // Burger menu logic
+        const burgerBtn = document.getElementById('burger-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (burgerBtn && navMenu) {
+            burgerBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('menu-open');
+                const isOpen = navMenu.classList.contains('menu-open');
+                
+                // Animar el icono del burger
+                if (isOpen) {
+                    burgerBtn.innerHTML = `
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>`;
+                } else {
+                    burgerBtn.innerHTML = `
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>`;
+                }
+            });
+
+            // Cerrar menú al hacer click en un enlace
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 880) {
+                        navMenu.classList.remove('menu-open');
+                        burgerBtn.innerHTML = `
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <line x1="3" y1="18" x2="21" y2="18"></line>
+                            </svg>`;
+                    }
+                });
+            });
+        }
     }
 });

@@ -363,13 +363,6 @@ a {
     padding: 10px 14px;
   }
   
-  .nav-menu {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 6px;
-    gap: 14px;
-  }
-  
   .search-input {
     width: 140px;
   }
@@ -1142,3 +1135,50 @@ a {
   color: var(--text-muted) !important;
 }
 
+/* ============================================================
+   BURGER MENU STYLES (MOBILE)
+   ============================================================ */
+.burger-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111111;
+  padding: 4px;
+}
+
+@media (max-width: 880px) {
+  .burger-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 280px;
+    height: calc(100vh - 60px);
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 20px;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-menu.menu-open {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+}

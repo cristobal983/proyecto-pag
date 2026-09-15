@@ -297,23 +297,40 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('No se pudieron leer los parámetros de URL:', e);
     }
 
-    fetch('../data/zapatillas.json')
-        .then(response => {
-            if (!response.ok) throw new Error('Network error loading json');
-            return response.json();
-        })
-        .then(data => {
-            allProducts = data;
+    const localProducts = localStorage.getItem('fyny_products');
+    if (localProducts) {
+        try {
+            allProducts = JSON.parse(localProducts);
             renderProducts();
             setupFilterListeners();
-        })
-        .catch(err => {
-            // Fallback for file:// or offline mode
-            console.warn('Utilizando catálogo local de respaldo:', err);
-            allProducts = fallbackProducts;
-            renderProducts();
-            setupFilterListeners();
-        });
+        } catch(e) {
+            fetchProducts();
+        }
+    } else {
+        fetchProducts();
+    }
+
+    function fetchProducts() {
+        fetch('../data/zapatillas.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Network error loading json');
+                return response.json();
+            })
+            .then(data => {
+                allProducts = data;
+                localStorage.setItem('fyny_products', JSON.stringify(data));
+                renderProducts();
+                setupFilterListeners();
+            })
+            .catch(err => {
+                // Fallback for file:// or offline mode
+                console.warn('Utilizando catálogo local de respaldo:', err);
+                allProducts = fallbackProducts;
+                localStorage.setItem('fyny_products', JSON.stringify(fallbackProducts));
+                renderProducts();
+                setupFilterListeners();
+            });
+    }
 
     function getFilteredProducts() {
         return allProducts.filter(product => {
